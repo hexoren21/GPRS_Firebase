@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Firebase.setAndroidContext(this);
         String DeviceID = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
         myFirebase = new Firebase("https://lokalizacja-gps.firebaseio.com/Users" + DeviceID);
-        new CountDownTimer(60000, 1000) {
+       /* new CountDownTimer(60000, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 myTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
@@ -65,27 +65,15 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }.start();
-        /*fjj*/
-       /* myButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GPStracker g = new GPStracker(getApplicationContext());
-                Location l = g.getLocation();
-                DateFormat df = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm");
-                final String date = df.format(Calendar.getInstance().getTime()).toString();
-                if (l != null) {
-                    double lat = l.getLatitude();
-                    double lon = l.getLongitude();
-                    myStringData = "Latitude: " + lat + ", Longitude: " + lon;
-                    Firebase myNewChild = myFirebase.child(date);
-                    myNewChild.setValue(myStringData);
-                    Toast.makeText(MainActivity.this, myStringData + " is update with " + myStringData, Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Toast.makeText(getApplicationContext(),"Brak wartosci!",Toast.LENGTH_SHORT).show();
-                }
+        */
+    }
 
-            }
-        });*/
+    public void WyslijDoSerwera(View view) {
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm");
+        final String date = df.format(Calendar.getInstance().getTime()).toString();
+        Firebase myNewChild = myFirebase.child(date);
+        myStringData = "Test GPRS";
+        myNewChild.setValue(myStringData);
+
     }
 }

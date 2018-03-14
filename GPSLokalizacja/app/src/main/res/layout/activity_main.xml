@@ -15,7 +15,9 @@
         android:layout_marginBottom="140dp"
         android:text="Wyslij lokalizacje"
         tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="326dp" />
+        tools:layout_editor_absoluteY="326dp"
+        android:onClick="WyslijDoSerwera"
+        />
 
     <TextView
         android:id="@+id/textView"
