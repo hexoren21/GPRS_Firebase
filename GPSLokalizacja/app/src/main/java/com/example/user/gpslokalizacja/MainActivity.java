@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }.start();
+        /*fjj*/
        /* myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
